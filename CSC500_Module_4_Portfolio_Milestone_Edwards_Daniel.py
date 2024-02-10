@@ -12,6 +12,7 @@ Description: This program is show the initizalization of a class and its default
 Usage: python3 CSC500_Module_4_Portfolio_Milestone_Edwards_Daniel.py
    
 """
+
 # ItemToPurchase class definition
 class ItemToPurchase:
     item_name = "none"
@@ -26,7 +27,10 @@ def _init_(self, item_name = "none", item_quantity = 0, item_price = 0.0):
     
 def print_item_cost(self):
     print(f"[self.item_name] [self.item_quantity] @ $[self.item_price] = $[self.item_price * self.item_quantity]")
-    
+
+print("Food Price Calculator\n")
+
+# ItemToPurchase object creation   
 item_one = ItemToPurchase()
 item_two = ItemToPurchase()
 
