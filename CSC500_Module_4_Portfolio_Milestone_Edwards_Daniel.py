@@ -19,7 +19,7 @@ class ItemToPurchase:
     item_quantity = 0
     item_price = 0.0
 
-# Default constructor for the ItemToPurchase class which ititializes ItemToPurchase object with default values
+# Default constructor for the ItemToPurchase class which initializes ItemToPurchase object with default values
 def _init_(self, item_name = "none", item_quantity = 0, item_price = 0.0):
     self.item_name = item_name
     self.item_quantity = item_quantity
