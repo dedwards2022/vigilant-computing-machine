@@ -20,7 +20,7 @@ class ItemToPurchase:
     item_price = 0.0
 
 # Default constructor for the ItemToPurchase class which initializes ItemToPurchase object with default values
-def _init_(self, item_name = "none", item_quantity = 0, item_price = 0.0):
+def __init__(self, item_name = "none", item_quantity = 0, item_price = 0.0):
     self.item_name = item_name
     self.item_quantity = item_quantity
     self.item_price = item_price
