@@ -2,7 +2,7 @@
 This program is for the CSC500 Module 4 Portfolio Milestone.
     
 Author: Daniel Edwards
-Version: 0.1
+Version: 0.2
 Date: 2024-02-10
 
 Description: This program is show the initizalization of a class and its default constructor and method. The two 
@@ -12,88 +12,65 @@ Description: This program is show the initizalization of a class and its default
 Usage: python3 CSC500_Module_4_Portfolio_Milestone_Edwards_Daniel.py
    
 """
+print("\nwaterFood Price Calculator")  # Print program title
+
+items = {}  # Empty dictionary to store items
+
+total_cost = 0  # Initialize total cost to 0
 
 # ItemToPurchase class definition
 class ItemToPurchase:
-    item_name = "none"
-    item_quantity = 0
-    item_price = 0.0
-
-# Default constructor for the ItemToPurchase class which initializes ItemToPurchase object with default values
-def __init__(self, item_name = "none", item_quantity = 0, item_price = 0.0):
-    self.item_name = item_name
-    self.item_quantity = item_quantity
-    self.item_price = item_price
+    def __init__(self, item_name="none", item_quantity=0, item_price=0.0):
+        self.name = item_name
+        self.quantity = item_quantity
+        self.price = item_price
     
-def print_item_cost(self):
-    print(f"{self.item_name} {self.item_quantity} @ ${self.item_price} = ${self.item_price * self.item_quantity}")
+    def print_item_cost(self):
+        print(f"{self.name} {self.quantity} @ ${self.price:.2f} = ${(self.price * self.quantity):.2f}")
 
-print("Food Price Calculator\n")
+# Collecting item information
+for item in range(2):  # Loop to add two items
+    item_name = input("\nEnter Item's Name: ")
+    item_quantity = int(input("Enter Item's Quantity: "))
+    item_price = float(input("Enter Item's Price: "))
+    items[item_name] = ItemToPurchase(item_name, item_quantity, item_price)
 
-# ItemToPurchase object creation   
-item_one = ItemToPurchase()
-item_two = ItemToPurchase()
+print("\nTOTAL COST")  # Print total cost of items
 
-# Gather data for item_one
-item_one.item_name = input("Enter Item's Name:")
-item_one.item_quantity = int(input("Enter Item's Quantity:"))
-item_one.item_price = float(input("Enter Item's Price:"))
+for item_name, item in items.items():
+    item.print_item_cost()
+    total_cost += item.price * item.quantity
 
-# Gather data for item_two
-item_two.item_name = input("\nEnter Item's Name:")
-item_two.item_quantity = int(input("Enter Item's Quantity:"))
-item_two.item_price = float(input("Enter Item's Price:"))
-
-# Print "TOTAL COST" then print the total cost of each item
-print("\nTOTAL COST")
-print(f"{item_one.item_name} {item_one.item_quantity} @ ${item_one.item_price:.2f} = ${item_one.item_price * item_one.item_quantity:.2f}")
-print(f"{item_two.item_name} {item_two.item_quantity} @ ${item_two.item_price:.2f} = ${item_two.item_price * item_two.item_quantity:.2f}")
-
-# Calculate and print the total cost
-total_cost = (item_one.item_price * item_one.item_quantity) + (item_two.item_price * item_two.item_quantity)
-format_total_cost = "{:.2f}".format(total_cost) # Format the total cost to two decimal places
-print(f"\nTotal: ${format_total_cost}") # Print total cost of items
+print(f"\nTotal: ${total_cost:.2f}")  # Print total cost of items
 
 """
 Program Pseudocode
 
-Class ItemToPurchase
-    Define item_name as "none"
-    Define item_quantity as 0
-    Define item_price as 0.0
+Output "Food Price Calculator"
 
-    Constructor(item_name = "none", item_quantity = 0, item_price = 0.0)
-        Set item_name
-        Set item_quantity
-        Set item_price
+Empty dictionary named items
 
-    Method print_item_cost
-        Print item_name, item_quantity, " @ $", item_price, " = $", (item_price * item_quantity)
+Initialize total_cost = 0
 
-End Class
+Class named ItemToPurchase:
+    Initialize class with item_name = "none", item_quantity = 0, and item_price = 0.0
+        Set ccariables name = item_name, quantity = item_quantity, and price = item_price
+        
+    Define method to print item cost:
+        Print item name, quantity, and price, and the product of price and quantity with the correct decimal point formatting
 
-Create item_one as ItemToPurchase
-Create item_two as ItemToPurchase
+For item in range(two items):
+    User inputs item's name and stores it in item_name
+    User inputs items quantity and stores it in item_quantity
+    User inputs items price and stores it in item_price
+    ItemToPurchase object stores user inputted items in dictionary
 
-Prompt user "Enter Item's Name:"
-Read item_one.item_name
-Prompt user "Enter Item's Quantity:"
-Read item_one.item_quantity (integer)
-Prompt user "Enter Item's Price:"
-Read item_one.item_price (float)
+Output "TOTAL COST"
 
-Prompt user "\nEnter Item's Name:"
-Read item_two.item_name
-Prompt user "Enter Item's Quantity:"
-Read item_two.item_quantity (integer)
-Prompt user "Enter Item's Price:"
-Read item_two.item_price (float)
+For each item_name and item in dictionary:
+    Call print_item_cost method for each item
+    Add the product name to the total_cost
 
-Output "\nTOTAL COST"
-Call print_item_cost for item_one
-Call print_item_cost for item_two
+Output formatted total_cost
 
-Calculate total_cost as (item_one.item_price * item_one.item_quantity) + (item_two.item_price * item_two.item_quantity)
-Format total_cost to two decimal places
-Output "\nTotal: $", formatted total_cost
 """
