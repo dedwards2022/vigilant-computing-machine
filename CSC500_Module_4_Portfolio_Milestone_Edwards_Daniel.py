@@ -12,7 +12,7 @@ Description: This program is show the initizalization of a class and its default
 Usage: python3 CSC500_Module_4_Portfolio_Milestone_Edwards_Daniel.py
    
 """
-print("\nwaterFood Price Calculator")  # Print program title
+print("\nFood Price Calculator")  # Print program title
 
 items = {}  # Empty dictionary to store items
 
