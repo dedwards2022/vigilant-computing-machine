@@ -31,9 +31,9 @@ class ItemToPurchase:
 
 # Collecting item information
 for item in range(2):  # Loop to add two items
-    item_name = input("\nEnter Item's Name: ")
-    item_quantity = int(input("Enter Item's Quantity: "))
-    item_price = float(input("Enter Item's Price: "))
+    item_name = input("\nEnter Item Name: ")
+    item_quantity = int(input("Enter Item Quantity: "))
+    item_price = float(input("Enter Item Price: "))
     items[item_name] = ItemToPurchase(item_name, item_quantity, item_price)
 
 print("\nTOTAL COST")  # Print total cost of items
@@ -56,10 +56,10 @@ Initialize total_cost = 0
 
 Class named ItemToPurchase:
     Initialize class with item_name = "none", item_quantity = 0, and item_price = 0.0
-        Set ccariables name = item_name, quantity = item_quantity, and price = item_price
+        Set variables name = item_name, quantity = item_quantity, and price = item_price
         
     Define method to print item cost:
-        Print item name, quantity, and price, and the product of price and quantity with the correct decimal point formatting
+        Print item name, quantity, and price (With correct decimal point formatting)
 
 For item in range(two items):
     User inputs item's name and stores it in item_name
