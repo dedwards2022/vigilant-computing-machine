@@ -24,7 +24,8 @@ class ItemToPurchase:
         self.name = item_name
         self.quantity = item_quantity
         self.price = item_price
-    
+
+    # Method to print item cost    
     def print_item_cost(self):
         print(f"{self.name} {self.quantity} @ ${self.price:.2f} = ${(self.price * self.quantity):.2f}")
 
@@ -37,6 +38,7 @@ for item in range(2):  # Loop to add two items
 
 print("\nTOTAL COST")  # Print total cost of items
 
+# For loop to print item cost and calculate total cost
 for item_name, item in items.items():
     item.print_item_cost()
     total_cost += item.price * item.quantity
