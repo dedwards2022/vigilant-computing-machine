@@ -26,7 +26,7 @@ def __init__(self, item_name = "none", item_quantity = 0, item_price = 0.0):
     self.item_price = item_price
     
 def print_item_cost(self):
-    print(f"[self.item_name] [self.item_quantity] @ $[self.item_price] = $[self.item_price * self.item_quantity]")
+    print(f"{self.item_name} {self.item_quantity} @ ${self.item_price} = ${self.item_price * self.item_quantity}")
 
 print("Food Price Calculator\n")
 
