@@ -1,5 +1,5 @@
 """
-This program is for the CSC500 Module 4 Portfolio Milestone.
+This program is for the CSC500 Module 6 Portfolio Milestone.
     
 Author: Daniel Edwards
 Version: 0.2
@@ -9,7 +9,7 @@ Description: This program is show the initizalization of a class and its default
              items are created and their costs are calculated and outputted. The total cost of the items is also 
              calculated and printed.
 
-Usage: python3 CSC500_Module_4_Portfolio_Milestone_Edwards_Daniel.py
+Usage: python3 CSC500_Module_6_Portfolio_Milestone_Edwards_Daniel.py
    
 """
 print("\nFood Price Calculator")  # Print program title
@@ -28,6 +28,32 @@ class ItemToPurchase:
     # Method to print item cost    
     def print_item_cost(self):
         print(f"{self.name} {self.quantity} @ ${self.price:.2f} = ${(self.price * self.quantity):.2f}")
+        
+############################################################################################################
+#                                   Part 4: Shopping Cart Class Definition                                 #
+############################################################################################################
+    
+class ShoppingCart:
+    def __init__(self, customer_name="none", current_date="January 1, 2020"):
+        self.customer_name = customer_name
+        self.current_date = current_date
+        self.cart_items = []
+    
+    # Method to add item / items to cart
+    def add_item(self, item_to_purchase):
+    
+        # Method to remove items from cart
+        def remove_item(self, item_name):
+            if item_name in self.cart_items:
+                self.cart_items.remove(item_name)
+            else:
+                print("Item not found in cart. Nothing removed.") # Print if an item is not found in cart_items list
+        
+        def modify_item(self, item_to_purchase):
+            if item_to_purchase in self.cart_items:
+                self.cart_items.append(item_to_purchase)
+            elif item_to_purchase not in self.cart_items:
+                
 
 # Collecting item information
 for item in range(2):  # Loop to add two items
@@ -46,7 +72,9 @@ for item_name, item in items.items():
 print(f"\nTotal: ${total_cost:.2f}")  # Print total cost of items
 
 """
-Program Pseudocode
+############################################################################################################
+#                                           Program Pseudocode                                             # 
+############################################################################################################
 
 Output "Food Price Calculator"
 
