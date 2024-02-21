@@ -2,12 +2,10 @@
 This program is for the CSC500 Module 6 Portfolio Milestone.
     
 Author: Daniel Edwards
-Version: 0.2
-Date: 2024-02-10
+Version: 0.3
+Date: 2024-02-20
 
-Description: This program is show the initizalization of a class and its default constructor and method. The two 
-             items are created and their costs are calculated and outputted. The total cost of the items is also 
-             calculated and printed.
+Description: TODO: Add description
 
 Usage: python3 CSC500_Module_6_Portfolio_Milestone_Edwards_Daniel.py
    
@@ -27,7 +25,7 @@ class ItemToPurchase:
         self.name = item_name
         self.quantity = item_quantity
         self.price = item_price
-        self.description = item_description
+        self.description = item_description # Added description attribute
 
     # Method to print item cost    
     def print_item_cost(self):
@@ -95,36 +93,62 @@ class ShoppingCart:
         for item in self.cart_items:
             print(f"{item.name}: {item.description}")
 
+############################################################################################################
+#                                   Part 5: Print Menu Static Method                                       #
+############################################################################################################
+
     def print_menu():
-        print('MENU')
-        print("\na - Add Item To Cart")
-        print("\nr - Remove Item From Cart")
-        print("\nc - Change Item Quantity")
-        print("\ni - Output Items' Descriptions")
-        print("\no - Output Shopping Cart")
-        print("\nq - Quit")
-        print("\nChoose An Option: ")
+        user_menu = (
+            '\n---------MENU---------\n'
+            "\na - Add Item To Cart"
+            "\nr - Remove Item From Cart"
+            "\nc - Change Item Quantity"
+            "\ni - Output Items Description"
+            "\no - Output Shopping Cart"
+            "\nq - Quit\n"
+        )
+        print(user_menu)
+        user_choice = input("Choose an option: ")
+        return user_choice
+                
+############################################################################################################
+#                         Part 6: Main Method (Shopping Cart Output Implementation)                        #
+############################################################################################################        
         
-def main():                
+def main(): # To-Do: Move print statements to individual methods               
+          
+    shopping_active = True
+    name = input("Enter Customer's Name: ")
+    date = input("Enter Today's Date: ")
+    customer_cart = ShoppingCart(name, date)
     
+    while shopping_active:
+        menu = ShoppingCart.print_menu()
+        if menu == 'a':
+            print("Add Item To Cart")
+            item_name = input("Enter Item Name: ")
+            item_description = input("Enter Item Description: ")
+            item_price = float(input("Enter Item Price: "))
+            item_quantity = int(input("Enter Item Quantity: "))
+            customer_cart.add_item(ItemToPurchase(item_name, item_quantity, item_price, item_description))
+        elif menu == 'r':
+            print("Remove Item From Cart")
+            item_name = input("Enter Item Name To Remove: ")
+            customer_cart.remove_item(item_name)
+        elif menu == 'c':
+            print("Change Item Quantity")
+            item_name = input("Enter Item Name: ")
+            quantity = int(input("Enter New Quantity: "))
+            customer_cart.modify_item(ItemToPurchase(item_name, quantity))
+        elif menu == 'i':
+            customer_cart.print_descriptions()
+        elif menu == 'o':
+            print("Output Shopping Cart")
+            customer_cart.print_total() # To-Do: Fix output float formatting
+        elif menu == 'q':
+            print("\nYou have quit the program.\n")
+            shopping_active = False
     
-# # Collecting item information
-# for item in range(2):  # Loop to add two items
-#     item_name = input("\nEnter Item Name: ")
-#     item_quantity = int(input("Enter Item Quantity: "))
-#     item_price = float(input("Enter Item Price: "))
-#     items[item_name] = ItemToPurchase(item_name, item_quantity, item_price)
-
-# print("\nTOTAL COST")  # Print total cost of items
-
-# # For loop to print item cost and calculate total cost
-# for item_name, item in items.items():
-#     item.print_item_cost()
-#     total_cost += item.price * item.quantity
-
-# print(f"\nTotal: ${total_cost:.2f}")  # Print total cost of items
-
-
 if __name__ == "__main__":
     main()
 
@@ -133,31 +157,6 @@ if __name__ == "__main__":
 #                                           Program Pseudocode                                             # 
 ############################################################################################################
 
-Output "Food Price Calculator"
-
-Empty dictionary named items
-
-Initialize total_cost = 0
-
-Class named ItemToPurchase:
-    Initialize class with item_name = "none", item_quantity = 0, and item_price = 0.0
-        Set variables name = item_name, quantity = item_quantity, and price = item_price
-        
-    Define method to print item cost:
-        Print item name, quantity, and price (With correct decimal point formatting)
-
-For item in range(two items):
-    User inputs item's name and stores it in item_name
-    User inputs items quantity and stores it in item_quantity
-    User inputs items price and stores it in item_price
-    ItemToPurchase object stores user inputted items in dictionary
-
-Output "TOTAL COST"
-
-For each item_name and item in dictionary:
-    Call print_item_cost method for each item
-    Add the product name to the total_cost
-
-Output formatted total_cost
+To Do: Add pseudocode
 
 """
