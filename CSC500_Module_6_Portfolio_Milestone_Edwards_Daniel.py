@@ -2,7 +2,7 @@
 This program is for the CSC500 Module 6 Portfolio Milestone.
     
 Author: Daniel Edwards
-Version: 0.3
+Version: 0.4
 Date: 2024-02-20
 
 Description: TODO: Add description
@@ -10,11 +10,6 @@ Description: TODO: Add description
 Usage: python3 CSC500_Module_6_Portfolio_Milestone_Edwards_Daniel.py
    
 """
-print("\nFood Price Calculator")  # Print program title
-
-items = {}  # Empty dictionary to store items
-
-total_cost = 0  # Initialize total cost to 0
 
 ############################################################################################################
 #                                   Part 1: Item To Purchase Class Definition                               #
@@ -50,9 +45,10 @@ class ShoppingCart:
             if item.name == item_name:
                 self.cart_items.remove(item)
                 item_found = True
+                print(f"{item_name} removed from cart.")
                 break
         if not item_found:
-            print("Item not found in cart. Nothing removed.")
+            print(f"{item_name} was not found in cart. Nothing removed.")
 
     def modify_item(self, ItemToPurchase):
         item_found = False
@@ -86,7 +82,8 @@ class ShoppingCart:
         if total_cost == 0:
             print("SHOPPING CART IS EMPTY")
         else:
-            print(f"Total: ${total_cost}")
+            print("Output Shopping Cart")
+            print(f"Total: ${total_cost:.2f}") # Added formatting to print total cost with 2 decimal places
 
     def print_descriptions(self):
         print("Item Descriptions:")
@@ -115,8 +112,13 @@ class ShoppingCart:
 #                         Part 6: Main Method (Shopping Cart Output Implementation)                        #
 ############################################################################################################        
         
-def main(): # To-Do: Move print statements to individual methods               
-          
+def main():               
+    
+    print("\nFood Price Calculator\n")  # Print program title
+
+    items = {}  # Empty dictionary to store items
+    total_cost = 0  # Initialize total cost to 0
+    
     shopping_active = True
     name = input("Enter Customer's Name: ")
     date = input("Enter Today's Date: ")
@@ -126,7 +128,7 @@ def main(): # To-Do: Move print statements to individual methods
         menu = ShoppingCart.print_menu()
         if menu == 'a':
             print("Add Item To Cart")
-            item_name = input("Enter Item Name: ")
+            item_name = input("\nEnter Item Name: ")
             item_description = input("Enter Item Description: ")
             item_price = float(input("Enter Item Price: "))
             item_quantity = int(input("Enter Item Quantity: "))
@@ -143,8 +145,7 @@ def main(): # To-Do: Move print statements to individual methods
         elif menu == 'i':
             customer_cart.print_descriptions()
         elif menu == 'o':
-            print("Output Shopping Cart")
-            customer_cart.print_total() # To-Do: Fix output float formatting
+            customer_cart.print_total()
         elif menu == 'q':
             print("\nYou have quit the program.\n")
             shopping_active = False
