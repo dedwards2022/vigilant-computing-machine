@@ -114,12 +114,13 @@ class ShoppingCart:
         
 def main():               
     
-    print("\nFood Price Calculator\n")  # Print program title
+    print("\nShopping Cart\n")  # Print program title
 
     items = {}  # Empty dictionary to store items
     total_cost = 0  # Initialize total cost to 0
     
-    shopping_active = True
+    shopping_active = True # Flag to control shopping loop
+    
     name = input("Enter Customer's Name: ")
     date = input("Enter Today's Date: ")
     customer_cart = ShoppingCart(name, date)
@@ -148,7 +149,7 @@ def main():
             customer_cart.print_total()
         elif menu == 'q':
             print("\nYou have quit the program.\n")
-            shopping_active = False
+            shopping_active = False # Set flag to False to exit loop
     
 if __name__ == "__main__":
     main()
