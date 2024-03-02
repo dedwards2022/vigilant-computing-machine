@@ -1,3 +1,4 @@
+# Dictionary of class information
 class_information = {
         
     "room_number": {
@@ -8,6 +9,7 @@ class_information = {
         "COM241": 1411
     },
     
+    # Dictionary of class instructors
     "class_instructors": {
         "CSC101": "Haynes",
         "CSC102": "Alvarado",
@@ -16,6 +18,7 @@ class_information = {
         "COM241": "Lee"
     },
     
+    # Dictionary of class meeting times
     "meeting_times": {
         "CSC101": "8:00 a.m.",
         "CSC102": "9:00 a.m.",
@@ -25,6 +28,7 @@ class_information = {
     }
 }
 
+# While loop to prompt user for class number
 while True:
     class_number = input("Enter a class number or 'q' to quit: ")
 
@@ -35,7 +39,7 @@ while True:
         print(f"\n{class_number} is taught by Professor {instructor}, and meets at {meeting_time} in classroom number {room_number}.\n")
     elif class_number == "":
         print("No class number entered. Please try again.")
-    elif class_number.lower() == 'q':
+    elif class_number.lower() == 'q': # If user enters 'q', the program will quit
         print("\nYou have quit the program")
         break
     else:
