@@ -32,6 +32,7 @@ class_information = {
 while True:
     class_number = input("Enter a class number or 'q' to quit: ")
 
+    # If class number is in the dictionary, print the class information
     if class_number in class_information["room_number"] and class_number in class_information["class_instructors"] and class_number in class_information["meeting_times"]:
         room_number = class_information["room_number"][class_number]
         instructor = class_information["class_instructors"][class_number]
@@ -44,3 +45,24 @@ while True:
         break
     else:
         print(f"Information for class number {class_number} is not available.")
+
+
+############################################################################################################
+# Pseudocode
+
+# Define Funciton class_information dictionary containing room numbers, instructors, and meeting times for different classes.
+
+# While True:
+#     User input to enter a class number or 'q' to quit.
+#     Read user input.
+
+#     If the input class number is present in all dictionaries inside class_information:
+#         Retrieve room number, instructor, and meeting time corresponding to the entered class number.
+#         Output the retrieved information about the class.
+#     ElseIf the input is an empty string:
+#         Output a message that no class number was entered and prompt the user again.
+#     ElseIf the input is 'q':
+#         Output a message for quitting the program.
+#         Break Statement out of the loop which quits the program
+#     Else:
+#         Print a message information for the entered class number is not available.
