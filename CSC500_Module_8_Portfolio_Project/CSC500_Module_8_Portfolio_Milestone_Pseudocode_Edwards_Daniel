@@ -1,0 +1,143 @@
+
+############################################################################################################
+#                                           Program Pseudocode                                             # 
+############################################################################################################
+
+Class named ItemToPurchase:
+    Initialize class with item_name = "none", item_quantity = 0, item_price = 0.0, and item_description = "none"
+        Set variables name = item_name, quantity = item_quantity, price = item_price, and description = item_description
+
+Class named ShoppingCart:
+    Initilize class with customer_name = "none", current_date = "January 1, 2020", and cart_items = []
+        Set variables customer_name = customer_name, current_date = current_date, and cart_items = cart_items
+
+    Method add_item(ItemToPurchase)
+        Add ItemToPurchase to cart_items list
+
+    Method remove_item(item_name)
+        Set item_found to False
+        For each item in cart_items
+            If item's name equals item_name
+                Remove item from cart_items
+                Set item_found to True
+                Output (item_name) + " removed from cart."
+                Exit loop
+
+        If item_found is False
+            Print (item_name) + " was not found in cart. Nothing removed."
+
+    Method modify_item(ItemToPurchase)
+        Set item_found to False
+        For each item in cart_items
+            If item's name equals ItemToPurchase's name
+                Set item_found to True
+                If ItemToPurchase's description is not "none"
+                    Set item's description to ItemToPurchase's description
+                If ItemToPurchase's price is not 0
+                    Set item's price to ItemToPurchase's price
+                If ItemToPurchase's quantity is not 0
+                    Set item's quantity to ItemToPurchase's quantity
+                Exit loop
+
+        If item_found is False
+            Output "Item not found in cart. Nothing modified."
+
+    Method get_num_items_in_cart()
+        Set total_quantity to 0
+        For each item in cart_items
+            Increase total_quantity by item's quantity
+        Return total_quantity
+
+    Method get_cost_of_cart()
+        Set total_cost to 0
+        For each item in cart_items
+            Increase total_cost by item's price multiplied by item's quantity
+        Return total_cost
+
+    Method print_total()
+        Set total_cost to result of get_cost_of_cart()
+        If total_cost equals 0
+            Output "SHOPPING CART IS EMPTY"
+        Else:
+            Output "Output Shopping Cart"
+            Output "Total: $" + format total_cost to two decimal places
+
+    Method print_descriptions()
+        Output "Item Descriptions: "
+        For each item in cart_items:
+            Output (fstring) (item's name) : (item's description)
+
+############################################################################################################
+
+    Method print_menu:
+        Define user_menu with options:
+            "---------MENU---------"
+            "a - Add Item To Cart"
+            "r - Remove Item From Cart"
+            "c - Change Item Quantity"
+            "i - Output Items Description"
+            "o - Output Shopping Cart"
+            "q - Quit"
+
+        Output user_menu
+
+        Ask user to Choose an option:
+        Read user_choice from user input
+        Return user_choice
+        
+############################################################################################################
+
+Main Program:
+
+    Output Shopping Cart as program title
+
+    Initialize 'items' empty dictionary
+    total_cost equals 0
+    Set 'shopping_active' to True (flag to control shopping loop)
+
+    Input from user for 'name' of the customer
+        Read & store 'name' of the customer
+    Input from user for 'date' of today
+        Read & store 'date' of today
+    Create a new ShoppingCart instance 'customer_cart' with 'name' and 'date'
+
+    While Loop shopping_active is True:
+        Display menu and read user choice into menu
+        
+        If menu is 'a'
+            Output "Add Item To Cart"
+            Prompt for item_name
+            Read and Store item_name
+            Prompt for item_description
+            Read and Store item_description
+            Prompt for item_price
+            Read, Store, and convert to float item_price
+            Prompt for item_quantity
+            Read, Store, and convert to integer item_quantity
+            Add new item to customer_cart
+        
+        Else If menu is 'r'
+            Output "Remove Item From Cart"
+            Prompt for and read item_name
+            Remove item from customer_cart
+        
+        Else If menu is 'c'
+            Output "Change Item Quantity"
+            Prompt user for item_name
+            Read and store item_name
+            Prompt user for quantity
+            Read, convert to integer, and store quantity
+            Modify item in customer_cart with new quantity
+        
+        Else If menu is 'i'
+            Call customer_cart.print_descriptions to output item descriptions
+        
+        Else If menu is 'o'
+            Call customer_cart.print_total to output total cost
+        
+        Else If menu is 'q'
+            Output "You have quit the program."
+            Set shopping_active flag to False to exit loop
+
+If program is executed directly:
+    Call main program
