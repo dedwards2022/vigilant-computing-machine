@@ -3,21 +3,22 @@ This program is for the CSC500 Module 8 Portfolio Project.
     
 Author: Daniel Edwards
 Version: 0.7
-Date: 2024-03-06
+Date: 2024-03-08
 
 Description: This is the functions file for the shopping cart program. It contains the ItemToPurchase and ShoppingCart classes.
 
 Usage: Imported into CSC500_Module_8_Portfolio_Project_Edwards_Daniel.py
    
 """
-
+# ItemToPurchase class
 class ItemToPurchase:
     def __init__(self, item_name="none", item_quantity=0, item_price=0.0, item_description="none"):
         self.name = item_name
         self.quantity = item_quantity
         self.price = item_price
         self.description = item_description # Added description attribute
-        
+
+# ShoppingCart class        
 class ShoppingCart:
     def __init__(self, customer_name="none", current_date="January 1, 2020"):
         self.customer_name = customer_name

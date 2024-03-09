@@ -2,8 +2,8 @@
 This program is for the CSC500 Module 8 Portfolio Project.
     
 Author: Daniel Edwards
-Version: 0.7
-Date: 2024-03-06
+Version: 0.8
+Date: 2024-03-08
 
 Description: This program simulates a shopping cart system where a user can add, remove, or modify items in their shopping cart.
 
@@ -11,6 +11,7 @@ Usage: python3 CSC500_Module_8_Portfolio_Project_Edwards_Daniel.py
    
 """
 
+# Import ItemToPurchase and ShoppingCart classes from CSC500_Module_8_Portfolio_Project_Functions_Edwards_Daniel.py
 from CSC500_Module_8_Portfolio_Project_Functions_Edwards_Daniel import ItemToPurchase, ShoppingCart
 
 # Menu Function
@@ -57,15 +58,16 @@ def main():
         ,,,,,,,+#@@%*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*%@@S;,,,,,,,
         ,,,,,,,,:+%#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#%+,,,,,,,,,
     """
-    print(ascii_art)
+    print(ascii_art) # Print ASCII Art
 
     items = {}  # Empty dictionary to store items
     total_cost = 0  # Initialize total cost to 0
     shopping_active = True # Flag to control shopping loop
     
+    # Get Customer Name and Today's Date
     name = input("Enter Customer's Name: ")
     date = input("Enter Today's Date: ")
-    customer_cart = ShoppingCart(name, date)
+    customer_cart = ShoppingCart(name, date) # Create new ShoppingCart object
     
     # Shopping Loop
     while shopping_active:
