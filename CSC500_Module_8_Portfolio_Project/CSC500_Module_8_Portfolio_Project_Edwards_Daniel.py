@@ -12,7 +12,7 @@ Usage: python3 CSC500_Module_8_Portfolio_Project_Edwards_Daniel.py
 """
 
 # Import ItemToPurchase and ShoppingCart classes from CSC500_Module_8_Portfolio_Project_Functions_Edwards_Daniel.py
-from CSC500_Module_8_Portfolio_Project_Functions_Edwards_Daniel import ItemToPurchase, ShoppingCart
+from CSC500_Module_8_Portfolio_Project_Methods_Edwards_Daniel import ItemToPurchase, ShoppingCart
 
 # Menu Function
 def print_menu():
