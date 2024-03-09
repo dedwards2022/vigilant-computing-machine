@@ -60,6 +60,9 @@ Main Program:
         Read & store 'date' of today
     Create a new ShoppingCart instance 'customer_cart' with 'name' and 'date'
 
+    Create a new ShoppingCart instance 'customer_name' with 'name' and 'date'
+    Output user inputted 'name' and 'date'
+
     While Loop shopping_active is True:
         Display menu and read user choice into menu
         

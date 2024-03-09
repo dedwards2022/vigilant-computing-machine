@@ -69,6 +69,9 @@ def main():
     date = input("Enter Today's Date: ")
     customer_cart = ShoppingCart(name, date) # Create new ShoppingCart object
     
+    customer_name = ShoppingCart(name, date).customer_name # Get customer name from ShoppingCart object
+    print(f"\nCustomer Name: {customer_name}\nToday's Date: {date}\n")
+    
     # Shopping Loop
     while shopping_active:
         menu = print_menu()
