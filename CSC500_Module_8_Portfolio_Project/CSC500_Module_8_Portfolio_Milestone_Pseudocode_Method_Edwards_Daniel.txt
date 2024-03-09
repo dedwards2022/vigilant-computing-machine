@@ -1,0 +1,67 @@
+############################################################################################################
+#                                           Program Function Pseudocode                                    # 
+############################################################################################################
+
+Class named ItemToPurchase:
+    Initialize class with item_name = "none", item_quantity = 0, item_price = 0.0, and item_description = "none"
+        Set variables name = item_name, quantity = item_quantity, price = item_price, and description = item_description
+
+Class named ShoppingCart:
+    Initilize class with customer_name = "none", current_date = "January 1, 2020", and cart_items = []
+        Set variables customer_name = customer_name, current_date = current_date, and cart_items = cart_items
+
+    Method add_item(ItemToPurchase)
+        Add ItemToPurchase to cart_items list
+
+    Method remove_item(item_name)
+        Set item_found to False
+        For each item in cart_items
+            If item's name equals item_name
+                Remove item from cart_items
+                Set item_found to True
+                Output (item_name) + " removed from cart."
+                Exit loop
+
+        If item_found is False
+            Print (item_name) + " was not found in cart. Nothing removed."
+
+    Method modify_item(ItemToPurchase)
+        Set item_found to False
+        For each item in cart_items
+            If item's name equals ItemToPurchase's name
+                Set item_found to True
+                If ItemToPurchase's description is not "none"
+                    Set item's description to ItemToPurchase's description
+                If ItemToPurchase's price is not 0
+                    Set item's price to ItemToPurchase's price
+                If ItemToPurchase's quantity is not 0
+                    Set item's quantity to ItemToPurchase's quantity
+                Exit loop
+
+        If item_found is False
+            Output "Item not found in cart. Nothing modified."
+
+    Method get_num_items_in_cart()
+        Set total_quantity to 0
+        For each item in cart_items
+            Increase total_quantity by item's quantity
+        Return total_quantity
+
+    Method get_cost_of_cart()
+        Set total_cost to 0
+        For each item in cart_items
+            Increase total_cost by item's price multiplied by item's quantity
+        Return total_cost
+
+    Method print_total()
+        Set total_cost to result of get_cost_of_cart()
+        If total_cost equals 0
+            Output "SHOPPING CART IS EMPTY"
+        Else:
+            Output "Output Shopping Cart"
+            Output "Total: $" + format total_cost to two decimal places
+
+    Method print_descriptions()
+        Output "Item Descriptions: "
+        For each item in cart_items:
+            Output (fstring) (item's name) : (item's description)
