@@ -1,5 +1,5 @@
 ############################################################################################################
-#                                           Program Main Pseudocode                                             # 
+#                                           Program Main Pseudocode                                        # 
 ############################################################################################################
 
 from CSC500_Module_8_Portfolio_Project_Functions_Edwards_Daniel import ItemToPurchase class and ShoppingCart Class
